@@ -1,0 +1,10 @@
+/* Remove previous custom styles */
+/* You can keep them if you want to customize further */
+
+#current-weather, #forecast {
+    margin-bottom: 20px;
+}
+.weather-icon {
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
