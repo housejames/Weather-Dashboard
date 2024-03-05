@@ -56,8 +56,8 @@ function displayCurrentWeather(data) {
 
 function displayForecast(data) {
     forecast.innerHTML = ''; // Clear previous forecast data
-    forecast.innerHTML = `<h3 class="mb-4">5-Day Forecast:</h3>`;
-    for (let i = 1; i < data.list.length; i += 8) { // Display forecast for every 24 hours (every 8th item in the list)
+    // forecast.innerHTML = `<h3 class="mb-4">5-Day Forecast:</h3>`;
+    for (let i = 0; i < data.list.length; i += 8) { // Display forecast for every 24 hours (every 8th item in the list)
         const forecastData = data.list[i];
         const date = new Date(forecastData.dt * 1000).toLocaleDateString();
         const iconUrl = `https://openweathermap.org/img/wn/${forecastData.weather[0].icon}.png`;
@@ -82,5 +82,12 @@ function displayForecast(data) {
 function addToSearchHistory(city) {
     const historyItem = document.createElement('div');
     historyItem.textContent = city;
+    historyItem.classList.add('search-history-item'); // Add a class for styling
     searchHistory.appendChild(historyItem);
-}
+ 
+    // Add event listener to history item
+    historyItem.addEventListener('click', () => {
+        getWeather(city); // Trigger getWeather function with the clicked city
+    });
+ }
+ 
