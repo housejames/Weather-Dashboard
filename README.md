@@ -1,3 +1,5 @@
+## Weather Dashboard
+
 ![Weather Dashboard](./assets/images/Screenshot%202024-03-05%20at%203.30.42%20PM.png)
 
 The Weather Dashboard is a web application that allows users to search for weather information for different cities. Users can view current weather conditions as well as a 5-day forecast.
@@ -27,7 +29,7 @@ The Weather Dashboard is a web application that allows users to search for weath
 ## Deployed Link
 
 1. Github profile: https://github.com/housejames
-2. Deployed site: 
+2. Deployed site: https://housejames.github.io/Weather-Dashboard/
 
 ## Installation
 
