@@ -80,14 +80,16 @@ function displayForecast(data) {
 }
 
 function addToSearchHistory(city) {
-    const historyItem = document.createElement('div');
-    historyItem.textContent = city;
-    historyItem.classList.add('search-history-item'); // Add a class for styling
-    searchHistory.appendChild(historyItem);
- 
-    // Add event listener to history item
-    historyItem.addEventListener('click', () => {
-        getWeather(city); // Trigger getWeather function with the clicked city
-    });
- }
- 
+    // Check if the city is already in the search history
+    const existingItem = Array.from(searchHistory.children).find(item => item.textContent === city);
+    if (!existingItem) {
+        const historyItem = document.createElement('div');
+        historyItem.textContent = city;
+        historyItem.classList.add('search-history-item'); // Add a class for styling
+        searchHistory.appendChild(historyItem);
+        // Add event listener to history item
+        historyItem.addEventListener('click', () => {
+            getWeather(city); // Trigger getWeather function with the clicked city
+        });
+    }
+}
